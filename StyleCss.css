@@ -120,8 +120,55 @@ body {
 .hero-inner {
     position: relative;
     z-index: 2;
-    max-width: 900px;
+    max-width: 1000px;
+    width: 100%;
 }
+
+/* Hero flex layout with photo */
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 48px;
+    flex-wrap: wrap;
+}
+
+.hero-text {
+    flex: 1 1 400px;
+    text-align: left;
+}
+
+/* Override text-align for hero elements when photo is present */
+.hero-content .hero-tag  { text-align: left; }
+.hero-content .hero-ctas { justify-content: flex-start; }
+
+/* Photo */
+.hero-photo-wrap {
+    flex-shrink: 0;
+    position: relative;
+    z-index: 3;
+}
+
+.hero-photo {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 50%;
+    border: 5px solid var(--yellow);
+    box-shadow:
+        8px 8px 0 var(--dark),
+        0 0 0 8px rgba(255,214,10,0.25);
+    display: block;
+    transform: rotate(2deg);
+    transition: transform 0.3s ease;
+}
+
+.hero-photo:hover {
+    transform: rotate(-2deg) scale(1.04);
+}
+
+
 
 .hero-tag {
     display: inline-block;
@@ -875,6 +922,13 @@ body {
     .nav-links a { font-size: 11px; }
 
     .hero { min-height: auto; padding: 60px 20px; }
+
+    .hero-content { flex-direction: column-reverse; align-items: center; text-align: center; }
+    .hero-text { text-align: center; }
+    .hero-content .hero-tag  { text-align: center; }
+    .hero-content .hero-ctas { justify-content: center; }
+    .hero-photo { width: 200px; height: 200px; }
+
 
     .about-section {
         flex-direction: column;
