@@ -896,6 +896,42 @@ body {
 
 .ci-icon { font-size: 18px; }
 
+/* Social Buttons */
+.social-btns {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 36px;
+}
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 99px;
+    border: 2.5px solid var(--dark);
+    box-shadow: 4px 4px 0 var(--dark);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.social-btn:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 7px 7px 0 var(--dark);
+}
+
+.social-btn.linkedin  { background: #0077b5; color: var(--white); }
+.social-btn.github    { background: var(--dark); color: var(--white); }
+.social-btn.whatsapp  { background: #25d366; color: var(--dark); }
+
+
+
 /* ══ FOOTER ══ */
 .site-footer {
     background: var(--dark);
