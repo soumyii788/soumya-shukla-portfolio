@@ -1,42 +1,66 @@
-# Frontend Web Development - Week 2 Assignments
+# Soumya Shukla — Portfolio
 
-A collection of foundational HTML5 and CSS3 practice modules created by Soumya Shukla.
+Personal portfolio website of **Soumya Shukla**, an aspiring ML/AI Engineer and Backend Developer pursuing B.Tech in Artificial Intelligence & Machine Learning at NIMS University Rajasthan, Jaipur.
+
+🔗 **Live Site:** [soumyii788.github.io/soumya-shukla-portfolio](https://soumyii788.github.io/soumya-shukla-portfolio) *(deploy via GitHub Pages)*
+
+---
 
 ## 📁 Project Structure
 
 ```text
 .
-├── README.md
+├── index.html          # Main portfolio homepage
+├── StyleCss.css        # Main stylesheet
 └── Week_2/
-    ├── Htmlindex.html      # About Me personal profile card
-    ├── StyleCss.css        # Stylesheet for About Me page
-    ├── CSSPosition.html    # Demonstration of static vs relative positioning
-    ├── city.html           # Ordered list of favorite cities
-    ├── city.css            # Stylesheet with gradients and hover transitions
-    ├── Html_1.html         # Unordered list of favorite movies
-    └── css_1.css           # Stylesheet for movies list with custom bullets
+    ├── index.html          # Week 2 assignments hub
+    ├── StyleCss.css        # Shared stylesheet
+    ├── CSSPosition.html    # CSS positioning demo
+    ├── city.html           # Favourite cities page
+    ├── city.css            # Cities stylesheet
+    ├── Html_1.html         # Favourite movies page
+    └── css_1.css           # Movies stylesheet
 ```
 
-## 🚀 Modules & Concepts Covered
+---
 
-### 1. About Me Profile Card (`Week_2/Htmlindex.html` & `Week_2/StyleCss.css`)
-- **HTML Semantics:** Semantic tags (`<p>`, `<span>`, `<a>`).
-- **Advanced Selectors:** Pseudo-elements (`::first-line`), attribute selectors (`a[target="_blank"]`), and descendant selectors.
-- **Visual Design:** Translucent RGBA highlight badges, text styling, and interactive link hover states.
+## 🚀 Sections
 
-### 2. CSS Positioning Demo (`Week_2/CSSPosition.html`)
-- **CSS Box Model:** Container margins, borders, padding, and centered card layout (`margin: 50px auto`).
-- **Positioning Types:** Contrasting normal document flow (`position: static`) against coordinate-shifted flow (`position: relative`).
+| Section | Description |
+|---|---|
+| **Hero** | Name, role tagline, and CTA |
+| **About** | Professional summary + education badges |
+| **Skills** | Python, Django, ML, Tools, Cloud, Languages |
+| **Experience** | Nexus of Nerds — Backend Developer Intern |
+| **Projects** | Ausadhi Vault, XYZ Logistics, Frontend Assignments |
+| **Certifications** | IEEE Shark Tank, SIH 2025, IIT Patna, Oracle, Google Cloud, BIRAC E-YUVA |
+| **Interests** | LLM Engineering, Scalable APIs, IoT+AI, DSA |
+| **Contact** | Email, Phone, LinkedIn, GitHub |
 
-### 3. Favorite Cities List (`Week_2/city.html` & `Week_2/city.css`)
-- **Ordered List Customization:** Upper-roman numeral numbering (`list-style-type: upper-roman`).
-- **Modern Effects:** Linear gradient background (`linear-gradient`), dashed borders, box shadows, and smooth CSS transitions on hover.
-- **Featured Item:** Distinct pill-badge styling for top choice using ID selector (`#favorite`).
+---
 
-### 4. Favorite Movies List (`Week_2/Html_1.html` & `Week_2/css_1.css`)
-- **Unordered List Customization:** Custom square bullets (`list-style-type: square`).
-- **Targeted Highlighting:** Dark contrast pill styling using `#favorite`.
+## 🛠️ Tech Stack
 
-## 🛠️ Technologies
 - **HTML5**
-- **CSS3**
+- **CSS3** — Glassmorphism, animations, responsive grid
+- **Google Fonts** — Lilita One, Poppins
+- **Git & GitHub**
+
+---
+
+## 👩‍💻 About Me
+
+- 🎓 B.Tech AI & ML — NIMS University Rajasthan | CGPA: 8.1
+- 💼 Backend Developer Intern — Nexus of Nerds, Jaipur
+- 🏆 SIH 2025 Internal Round Qualifier
+- 🎤 IEEE Shark Tank Presenter
+- ☁️ Google Cloud & Oracle Certified
+
+---
+
+## 📬 Contact
+
+- **Email:** saumyashukla788708@gmail.com
+- **Phone:** +91 6306503294
+- **LinkedIn:** [linkedin.com/in/soumya-shukla-788708s](https://linkedin.com/in/soumya-shukla-788708s)
+- **GitHub:** [github.com/soumyii788](https://github.com/soumyii788)
