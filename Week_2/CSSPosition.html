@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Position Property ✨</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --hot-pink:    #ff2d78;
+            --soft-pink:   #ffb3c6;
+            --gold:        #f9c74f;
+            --lavender:    #c77dff;
+            --dark:        #1a0a2e;
+            --glass:       rgba(255, 255, 255, 0.10);
+            --glass-border: rgba(255, 255, 255, 0.22);
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a0a2e 0%, #2d1b69 35%, #7b2d8b 65%, #c2185b 100%);
+            background-attachment: fixed;
+            color: white;
+            text-align: center;
+            padding: 100px 20px 60px;
+            overflow-x: hidden;
+        }
+
+        /* Back Button */
+        .back-btn {
+            position: fixed;
+            top: 24px;
+            left: 24px;
+            z-index: 100;
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 13px;
+            padding: 8px 18px;
+            border-radius: 99px;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .back-btn:hover {
+            background: rgba(255,45,120,0.3);
+            transform: scale(1.05);
+        }
+
+        /* Page Header */
+        .page-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--gold), var(--soft-pink));
+            color: var(--dark);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 5px 18px;
+            border-radius: 99px;
+            margin-bottom: 16px;
+            animation: fadeDown 0.7s ease both;
+        }
+        h1.page-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 8vw, 64px);
+            font-weight: 900;
+            background: linear-gradient(90deg, #fff, var(--soft-pink), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 48px;
+            animation: fadeDown 0.9s ease 0.2s both;
+        }
+        @keyframes fadeDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Demo Container */
+        .demo-container {
+            position: relative;
+            width: 420px;
+            margin: 0 auto;
+            background: var(--glass);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 28px;
+            box-shadow: 0 8px 40px rgba(255,45,120,0.2);
+            text-align: left;
+            animation: fadeUp 1s ease 0.3s both;
+        }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Heading box inside demo */
+        .heading-box {
+            background: linear-gradient(90deg, var(--hot-pink), var(--lavender));
+            border-radius: 14px;
+            padding: 14px 20px;
+            margin-bottom: 20px;
+        }
+        .heading-box h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: white;
+            text-align: center;
+        }
+
+        /* Labels */
+        .position-label {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 3px 10px;
+            border-radius: 99px;
+            margin-bottom: 6px;
+        }
+
+        /* Static box */
+        .static {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(249, 199, 79, 0.4);
+            border-radius: 14px;
+            padding: 16px 20px;
+            margin-bottom: 16px;
+        }
+        .static .position-label {
+            background: rgba(249,199,79,0.2);
+            color: var(--gold);
+            border: 1px solid rgba(249,199,79,0.4);
+        }
+        .static p {
+            font-size: 15px;
+            color: rgba(255,255,255,0.85);
+        }
+
+        /* Relative box */
+        .relative {
+            position: relative;
+            top: 10px;
+            left: 15px;
+            background: linear-gradient(135deg, rgba(255,45,120,0.2), rgba(199,125,255,0.2));
+            border: 1px solid rgba(255,45,120,0.4);
+            border-radius: 14px;
+            padding: 16px 20px;
+            box-shadow: 0 4px 20px rgba(255,45,120,0.2);
+        }
+        .relative .position-label {
+            background: rgba(255,45,120,0.2);
+            color: var(--soft-pink);
+            border: 1px solid rgba(255,45,120,0.4);
+        }
+        .relative p {
+            font-size: 15px;
+            color: rgba(255,255,255,0.9);
+        }
+
+        /* Legend */
+        .legend {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 420px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeUp 1s ease 0.6s both;
+        }
+        .legend-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 14px;
+            padding: 14px 18px;
+            text-align: left;
+        }
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-top: 4px;
+            flex-shrink: 0;
+        }
+        .legend-dot.gold    { background: var(--gold); box-shadow: 0 0 8px var(--gold); }
+        .legend-dot.pink    { background: var(--hot-pink); box-shadow: 0 0 8px var(--hot-pink); }
+        .legend-text strong { display: block; font-size: 13px; font-weight: 700; margin-bottom: 2px; }
+        .legend-text span   { font-size: 12px; color: rgba(255,255,255,0.6); }
+    </style>
+</head>
+<body>
+
+    <a href="../index.html" class="back-btn">← Back</a>
+
+    <div class="page-badge">📐 CSS Fundamentals</div>
+    <h1 class="page-title">CSS Position Property</h1>
+
+    <div class="demo-container">
+        <div class="heading-box">
+            <h2>Position Demo ✨</h2>
+        </div>
+
+        <div class="static">
+            <span class="position-label">static</span>
+            <p>This is my <strong>static</strong> div — default flow, no offset.</p>
+        </div>
+
+        <div class="relative">
+            <span class="position-label">relative</span>
+            <p>This is my <strong>relative</strong> div — nudged <code>top: 10px; left: 15px</code> from its normal spot.</p>
+        </div>
+    </div>
+
+    <div class="legend">
+        <div class="legend-item">
+            <div class="legend-dot gold"></div>
+            <div class="legend-text">
+                <strong>position: static</strong>
+                <span>The default. Element follows normal document flow. top/left/right/bottom have no effect.</span>
+            </div>
+        </div>
+        <div class="legend-item">
+            <div class="legend-dot pink"></div>
+            <div class="legend-text">
+                <strong>position: relative</strong>
+                <span>Element stays in normal flow but can be offset with top/left/right/bottom relative to its original position.</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

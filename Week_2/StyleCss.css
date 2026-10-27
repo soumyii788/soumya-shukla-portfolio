@@ -1,0 +1,313 @@
+/* ===========================
+   HOT GIRL SNACKS CSS ✨💅
+   =========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@400;500;600;700&display=swap');
+
+/* ---------- CSS Variables ---------- */
+:root {
+    --hot-pink:    #ff2d78;
+    --soft-pink:   #ffb3c6;
+    --blush:       #ffe0ec;
+    --gold:        #f9c74f;
+    --lavender:    #c77dff;
+    --deep-purple: #7b2d8b;
+    --dark:        #1a0a2e;
+    --white:       #ffffff;
+    --glass:       rgba(255, 255, 255, 0.12);
+    --glass-border: rgba(255, 255, 255, 0.25);
+}
+
+/* ---------- Reset & Base ---------- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg,
+        #1a0a2e 0%,
+        #2d1b69 30%,
+        #7b2d8b 60%,
+        #c2185b 100%);
+    background-attachment: fixed;
+    color: var(--white);
+    text-align: center;
+    padding: 0 20px 80px;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* ---------- Sparkles Background ---------- */
+.sparkles {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.sparkles span {
+    position: absolute;
+    font-size: clamp(10px, 2vw, 22px);
+    color: var(--gold);
+    opacity: 0;
+    animation: floatSparkle 6s infinite ease-in-out;
+}
+
+/* Distribute sparkles across the screen */
+.sparkles span:nth-child(1)  { left: 5%;  top: 10%; animation-delay: 0s;    animation-duration: 7s; }
+.sparkles span:nth-child(2)  { left: 15%; top: 80%; animation-delay: 1s;    animation-duration: 5s; }
+.sparkles span:nth-child(3)  { left: 25%; top: 30%; animation-delay: 2s;    animation-duration: 8s; }
+.sparkles span:nth-child(4)  { left: 35%; top: 70%; animation-delay: 0.5s;  animation-duration: 6s; }
+.sparkles span:nth-child(5)  { left: 50%; top: 15%; animation-delay: 1.5s;  animation-duration: 7s; }
+.sparkles span:nth-child(6)  { left: 60%; top: 85%; animation-delay: 2.5s;  animation-duration: 5s; }
+.sparkles span:nth-child(7)  { left: 70%; top: 40%; animation-delay: 0.8s;  animation-duration: 9s; }
+.sparkles span:nth-child(8)  { left: 80%; top: 65%; animation-delay: 1.8s;  animation-duration: 6s; }
+.sparkles span:nth-child(9)  { left: 90%; top: 20%; animation-delay: 3s;    animation-duration: 7s; }
+.sparkles span:nth-child(10) { left: 45%; top: 55%; animation-delay: 0.3s;  animation-duration: 8s; }
+.sparkles span:nth-child(11) { left: 88%; top: 90%; animation-delay: 2.2s;  animation-duration: 6s; }
+.sparkles span:nth-child(12) { left: 8%;  top: 50%; animation-delay: 1.2s;  animation-duration: 5s; }
+
+@keyframes floatSparkle {
+    0%   { opacity: 0;   transform: translateY(0)     rotate(0deg)   scale(0.5); }
+    25%  { opacity: 0.8; transform: translateY(-20px) rotate(45deg)  scale(1.2); }
+    50%  { opacity: 0.4; transform: translateY(-40px) rotate(90deg)  scale(0.8); }
+    75%  { opacity: 0.9; transform: translateY(-60px) rotate(135deg) scale(1.1); }
+    100% { opacity: 0;   transform: translateY(-80px) rotate(180deg) scale(0.5); }
+}
+
+/* ---------- Hero Section ---------- */
+.hero {
+    position: relative;
+    z-index: 1;
+    padding-top: 80px;
+    padding-bottom: 20px;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: linear-gradient(90deg, var(--gold), var(--soft-pink));
+    color: var(--dark);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 20px;
+    border-radius: 99px;
+    margin-bottom: 24px;
+    animation: fadeSlideDown 0.8s ease both;
+}
+
+.hero-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 16px;
+    animation: fadeSlideDown 1s ease 0.2s both;
+}
+
+.name-line {
+    font-size: clamp(56px, 12vw, 120px);
+    background: linear-gradient(90deg, #ffffff, var(--soft-pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 30px rgba(255, 45, 120, 0.5));
+}
+
+.name-line.accent {
+    background: linear-gradient(90deg, var(--gold), var(--hot-pink), var(--lavender));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 40px rgba(249, 199, 79, 0.6));
+    animation: shimmer 3s ease-in-out infinite alternate;
+}
+
+@keyframes shimmer {
+    0%   { filter: drop-shadow(0 0 30px rgba(249, 199, 79, 0.4)); }
+    100% { filter: drop-shadow(0 0 60px rgba(255, 45, 120, 0.8)); }
+}
+
+.hero-subtitle {
+    font-size: clamp(18px, 4vw, 28px);
+    font-weight: 500;
+    color: var(--soft-pink);
+    letter-spacing: 1px;
+    animation: fadeSlideDown 1s ease 0.4s both;
+}
+
+@keyframes fadeSlideDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Card Grid ---------- */
+.card-grid {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 50px 20px 10px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.card {
+    background: var(--glass);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 32px 28px;
+    max-width: 380px;
+    flex: 1 1 300px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeUp 0.8s ease both;
+    box-shadow:
+        0 8px 32px rgba(255, 45, 120, 0.15),
+        inset 0 1px 0 rgba(255,255,255,0.2);
+}
+
+.card:nth-child(2) { animation-delay: 0.2s; }
+
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow:
+        0 20px 60px rgba(255, 45, 120, 0.35),
+        0 0 30px rgba(199, 125, 255, 0.2),
+        inset 0 1px 0 rgba(255,255,255,0.3);
+}
+
+.card-emoji {
+    font-size: 36px;
+    margin-bottom: 14px;
+    display: block;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Content Text ---------- */
+.content {
+    font-size: 16px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* ---------- Highlight Pill ---------- */
+.highlight-box {
+    display: inline-block;
+    background: linear-gradient(90deg, var(--hot-pink), var(--lavender));
+    color: var(--white);
+    padding: 3px 12px;
+    border-radius: 99px;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+    box-shadow: 0 2px 12px rgba(255, 45, 120, 0.4);
+}
+
+/* ---------- More Info / GitHub ---------- */
+.more-info {
+    position: relative;
+    z-index: 1;
+    margin-top: 40px;
+    font-size: 16px;
+    color: rgba(255,255,255,0.7);
+    font-style: italic;
+}
+
+.external-link {
+    display: inline-block;
+    margin-left: 6px;
+    background: linear-gradient(90deg, var(--gold), #ffca28);
+    color: var(--dark) !important;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 700;
+    padding: 8px 20px;
+    border-radius: 99px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 20px rgba(249, 199, 79, 0.4);
+}
+
+.external-link:hover {
+    transform: scale(1.07) translateY(-2px);
+    box-shadow: 0 8px 30px rgba(249, 199, 79, 0.7);
+}
+
+/* ---------- Navigation ---------- */
+.project-nav {
+    position: relative;
+    z-index: 1;
+    margin: 60px auto 0;
+    max-width: 680px;
+    padding: 36px 40px;
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 28px;
+    box-shadow:
+        0 8px 32px rgba(123, 45, 139, 0.3),
+        inset 0 1px 0 rgba(255,255,255,0.15);
+    animation: fadeUp 1s ease 0.5s both;
+}
+
+.project-nav h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(20px, 4vw, 28px);
+    font-weight: 700;
+    background: linear-gradient(90deg, var(--gold), var(--soft-pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 24px;
+    letter-spacing: 0.5px;
+}
+
+.project-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.project-nav li a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 600;
+    font-size: 14px;
+    padding: 12px 22px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(255,45,120,0.3), rgba(199,125,255,0.3));
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+    letter-spacing: 0.2px;
+}
+
+.project-nav li a:hover {
+    transform: translateY(-4px) scale(1.05);
+    background: linear-gradient(135deg, var(--hot-pink), var(--lavender));
+    box-shadow: 0 8px 25px rgba(255, 45, 120, 0.5);
+    border-color: transparent;
+}
