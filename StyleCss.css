@@ -731,6 +731,22 @@ body {
     color: var(--white);
 }
 
+/* Repo button inside project cards */
+.card-links a.repo-btn {
+    background: var(--dark);
+    color: var(--white);
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    border-color: var(--dark);
+}
+
+.card-links a.repo-btn:hover {
+    background: var(--pink);
+    color: var(--white);
+    transform: translate(-2px, -2px);
+    box-shadow: 3px 3px 0 var(--dark);
+}
+
 /* ══ CERTIFICATIONS ══ */
 .certs-section {
     background: var(--dark);
