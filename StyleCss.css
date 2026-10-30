@@ -273,6 +273,18 @@ body {
     border-color: var(--white);
 }
 
+.btn-pill.cv-btn {
+    background: var(--white);
+    color: var(--dark);
+    border-color: var(--dark);
+    font-weight: 900;
+}
+
+.btn-pill.cv-btn:hover {
+    background: var(--yellow);
+    color: var(--dark);
+}
+
 .btn-pill.large {
     font-size: 16px;
     padding: 20px 48px;
