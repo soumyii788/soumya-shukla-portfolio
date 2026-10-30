@@ -274,15 +274,15 @@ body {
 }
 
 .btn-pill.cv-btn {
-    background: var(--white);
-    color: var(--dark);
+    background: var(--dark);
+    color: var(--white);
     border-color: var(--dark);
     font-weight: 900;
 }
 
 .btn-pill.cv-btn:hover {
-    background: var(--yellow);
-    color: var(--dark);
+    background: #333;
+    color: var(--white);
 }
 
 .btn-pill.large {
