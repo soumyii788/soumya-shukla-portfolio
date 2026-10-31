@@ -220,41 +220,102 @@
         <h2 class="section-heading-dark">MY PROJECTS</h2>
         <div class="projects-grid">
 
-            <div class="project-card" style="--card-bg:#4cc9f0;">
-                <div class="card-badge new">HARDWARE</div>
-                <div class="card-emoji-big">💊</div>
-                <div class="card-body">
-                    <p class="card-sub">Python · Django · IoT · NumPy · Pandas · scikit-learn · Cloud</p>
-                    <h3 class="card-title">AUSADHI VAULT</h3>
-                    <p class="card-desc">AI-Integrated IoT Medicine Vending System. Engineered a smart medicine dispenser integrating IoT sensors with an AI/ML decision engine, automating medicine identification and delivery with measurable improvement in dispensing accuracy.</p>
-                    <div class="card-links">
-                        <a href="https://github.com/soumyii788/Ausadhi-vault" target="_blank" rel="noopener noreferrer" class="repo-btn">🐙 View Repo →</a>
+            <!-- AUSADHI VAULT — flip shows image -->
+            <div class="flip-card" style="--card-bg:#4cc9f0;">
+                <div class="flip-inner">
+                    <!-- FRONT -->
+                    <div class="flip-front">
+                        <div class="card-badge new">HARDWARE</div>
+                        <div class="card-emoji-big">💊</div>
+                        <div class="card-body">
+                            <p class="card-sub">Python · Django · IoT · NumPy · Pandas · scikit-learn · Cloud</p>
+                            <h3 class="card-title">AUSADHI VAULT</h3>
+                            <p class="card-desc">AI-Integrated IoT Medicine Vending System with an AI/ML decision engine automating medicine identification and delivery.</p>
+                            <div class="card-links">
+                                <a href="https://github.com/soumyii788/Ausadhi-vault" target="_blank" rel="noopener noreferrer" class="repo-btn" onclick="event.stopPropagation()">🐙 View Repo →</a>
+                            </div>
+                        </div>
+                        <div class="flip-hint">👆 Tap to see demo</div>
+                    </div>
+                    <!-- BACK — image -->
+                    <div class="flip-back" style="--card-bg:#4cc9f0;">
+                        <img src="assets/ausadhi-demo.jpg" alt="Ausadhi Vault Demo" class="demo-media demo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                        <div class="demo-placeholder" style="display:flex;">
+                            <span>📸</span>
+                            <p>Upload <strong>assets/ausadhi-demo.jpg</strong><br>to show project photo here</p>
+                        </div>
+                        <div class="flip-back-footer">
+                            <span class="back-title">AUSADHI VAULT</span>
+                            <a href="https://github.com/soumyii788/Ausadhi-vault" target="_blank" rel="noopener noreferrer" class="repo-btn" onclick="event.stopPropagation()">🐙 Repo</a>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="project-card" style="--card-bg:#f72585;">
-                <div class="card-badge bestseller">FEATURED ✨</div>
-                <div class="card-emoji-big">📧</div>
-                <div class="card-body">
-                    <p class="card-sub">Python · Gmail API · Automation · AI Prioritization</p>
-                    <h3 class="card-title">XYZ LOGISTICS — EMAIL AUTOMATION</h3>
-                    <p class="card-desc">AI-Powered Email Automation System. Built an intelligent email management system using the Gmail API that tracked unresolved client communications and dispatched automated follow-up reminders until resolution was confirmed.</p>
-                    <div class="card-links">
-                        <a href="https://github.com/soumyii788/XYZ" target="_blank" rel="noopener noreferrer" class="repo-btn">🐙 View Repo →</a>
+            <!-- XYZ — flip shows video -->
+            <div class="flip-card" style="--card-bg:#f72585;">
+                <div class="flip-inner">
+                    <!-- FRONT -->
+                    <div class="flip-front">
+                        <div class="card-badge bestseller">FEATURED ✨</div>
+                        <div class="card-emoji-big">📧</div>
+                        <div class="card-body">
+                            <p class="card-sub">Python · Gmail API · Automation · AI Prioritization</p>
+                            <h3 class="card-title">XYZ LOGISTICS</h3>
+                            <p class="card-desc">AI-Powered Email Automation System tracking unresolved client communications and dispatching automated follow-ups.</p>
+                            <div class="card-links">
+                                <a href="https://github.com/soumyii788/XYZ" target="_blank" rel="noopener noreferrer" class="repo-btn" onclick="event.stopPropagation()">🐙 View Repo →</a>
+                            </div>
+                        </div>
+                        <div class="flip-hint">👆 Tap to see demo</div>
+                    </div>
+                    <!-- BACK — video -->
+                    <div class="flip-back" style="--card-bg:#f72585;">
+                        <video class="demo-media demo-video" src="assets/xyz-demo.mp4" muted loop playsinline
+                               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                        </video>
+                        <div class="demo-placeholder" style="display:none;">
+                            <span>🎬</span>
+                            <p>Upload <strong>assets/xyz-demo.mp4</strong><br>to show demo video here</p>
+                        </div>
+                        <div class="flip-back-footer">
+                            <span class="back-title">XYZ LOGISTICS</span>
+                            <a href="https://github.com/soumyii788/XYZ" target="_blank" rel="noopener noreferrer" class="repo-btn" onclick="event.stopPropagation()">🐙 Repo</a>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="project-card" style="--card-bg:#ffd60a;">
-                <div class="card-badge new">MARKETPLACE</div>
-                <div class="card-emoji-big">♻️</div>
-                <div class="card-body">
-                    <p class="card-sub">Backend · Scalable Systems · Logistics · Marketplace</p>
-                    <h3 class="card-title">TRASHOOD</h3>
-                    <p class="card-desc">Scrap Recycling Marketplace — a robust, highly scalable backend system designed for high-throughput marketplace operations, tailored for modern scrap collection, recycling, and logistics platforms.</p>
-                    <div class="card-links">
-                        <a href="https://github.com/soumyii788/TRASHOOD" target="_blank" rel="noopener noreferrer" class="repo-btn">🐙 View Repo →</a>
+            <!-- TRASHOOD — flip shows video -->
+            <div class="flip-card" style="--card-bg:#ffd60a;">
+                <div class="flip-inner">
+                    <!-- FRONT -->
+                    <div class="flip-front">
+                        <div class="card-badge new">MARKETPLACE</div>
+                        <div class="card-emoji-big">♻️</div>
+                        <div class="card-body">
+                            <p class="card-sub">Backend · Scalable Systems · Logistics · Marketplace</p>
+                            <h3 class="card-title">TRASHOOD</h3>
+                            <p class="card-desc">Scrap Recycling Marketplace — robust, scalable backend for high-throughput scrap collection, recycling, and logistics.</p>
+                            <div class="card-links">
+                                <a href="https://github.com/soumyii788/TRASHOOD" target="_blank" rel="noopener noreferrer" class="repo-btn" onclick="event.stopPropagation()">🐙 View Repo →</a>
+                            </div>
+                        </div>
+                        <div class="flip-hint">👆 Tap to see demo</div>
+                    </div>
+                    <!-- BACK — video -->
+                    <div class="flip-back" style="--card-bg:#ffd60a;">
+                        <video class="demo-media demo-video" src="assets/trashood-demo.mp4" muted loop playsinline
+                               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                        </video>
+                        <div class="demo-placeholder" style="display:none;">
+                            <span>🎬</span>
+                            <p>Upload <strong>assets/trashood-demo.mp4</strong><br>to show demo video here</p>
+                        </div>
+                        <div class="flip-back-footer">
+                            <span class="back-title">TRASHOOD</span>
+                            <a href="https://github.com/soumyii788/TRASHOOD" target="_blank" rel="noopener noreferrer" class="repo-btn" onclick="event.stopPropagation()">🐙 Repo</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -388,7 +449,7 @@
 
 
     <!-- ══ CURSOR SPARKLE CANVAS ══ -->
-    <canvas id="sparkle-canvas" style="position:fixed;top:0;left:0;pointer-events:none;z-index:9999;"></canvas>
+    <canvas id="sparkle-canvas" style="position:fixed;top:0;left:0;pointer-events:none;z-index:9999;display:none;"></canvas>
 
     <script>
     /* ── 1. SCROLL REVEAL ── */
@@ -449,53 +510,17 @@
         }, 400);
     }
 
-    /* ── 5. CURSOR SPARKLES ── */
-    const canvas = document.getElementById('sparkle-canvas');
-    const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    window.addEventListener('resize', () => {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+    /* ── 5. FLIP CARDS — tap to flip, play video/show image ── */
+    document.querySelectorAll('.flip-card').forEach(card => {
+        card.addEventListener('click', () => {
+            const isFlipped = card.classList.toggle('flipped');
+            const video = card.querySelector('.demo-video');
+            if (video) {
+                if (isFlipped) { video.play(); }
+                else           { video.pause(); video.currentTime = 0; }
+            }
+        });
     });
-
-    const particles = [];
-    const colors = ['#f8cdd8', '#ffd60a', '#f72585', '#4cc9f0', '#ffffff'];
-
-    window.addEventListener('mousemove', (e) => {
-        for (let i = 0; i < 3; i++) {
-            particles.push({
-                x: e.clientX,
-                y: e.clientY,
-                r: Math.random() * 5 + 2,
-                color: colors[Math.floor(Math.random() * colors.length)],
-                vx: (Math.random() - 0.5) * 3,
-                vy: (Math.random() - 0.5) * 3 - 1,
-                life: 1
-            });
-        }
-    });
-
-    function animateSparkles() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        for (let i = particles.length - 1; i >= 0; i--) {
-            const p = particles[i];
-            p.x += p.vx;
-            p.y += p.vy;
-            p.vy += 0.08;
-            p.life -= 0.03;
-            if (p.life <= 0) { particles.splice(i, 1); continue; }
-            ctx.save();
-            ctx.globalAlpha = p.life;
-            ctx.fillStyle = p.color;
-            ctx.beginPath();
-            ctx.arc(p.x, p.y, p.r * p.life, 0, Math.PI * 2);
-            ctx.fill();
-            ctx.restore();
-        }
-        requestAnimationFrame(animateSparkles);
-    }
-    animateSparkles();
 
     /* ── 6. NAVBAR SCROLL SHADOW ── */
     const nav = document.querySelector('.main-nav');
