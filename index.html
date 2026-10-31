@@ -386,5 +386,129 @@
         <p class="footer-copy">B.Tech AI &amp; ML · NIMS University Rajasthan · Built with 💖 by Soumya Shukla · 2025</p>
     </footer>
 
+
+    <!-- ══ CURSOR SPARKLE CANVAS ══ -->
+    <canvas id="sparkle-canvas" style="position:fixed;top:0;left:0;pointer-events:none;z-index:9999;"></canvas>
+
+    <script>
+    /* ── 1. SCROLL REVEAL ── */
+    const revealEls = document.querySelectorAll(
+        '.skill-card, .project-card, .cert-item, .exp-card, .interest-tag, .contact-item, .section-heading-dark, .section-heading, .about-text, .statement-text'
+    );
+    revealEls.forEach((el, i) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(40px)';
+        el.style.transition = `opacity 0.6s ease ${(i % 6) * 0.08}s, transform 0.6s ease ${(i % 6) * 0.08}s`;
+    });
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => observer.observe(el));
+
+    /* ── 2. HERO TEXT STAGGER ON LOAD ── */
+    const heroLines = document.querySelectorAll('.hero-heading .line');
+    heroLines.forEach((line, i) => {
+        line.style.opacity = '0';
+        line.style.transform = 'translateY(30px)';
+        line.style.display = 'block';
+        setTimeout(() => {
+            line.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+            line.style.opacity = '1';
+            line.style.transform = 'translateY(0)';
+        }, 200 + i * 180);
+    });
+
+    /* ── 3. HERO TAG + SUB FADE ── */
+    ['.hero-tag', '.hero-sub', '.hero-ctas'].forEach((sel, i) => {
+        const el = document.querySelector(sel);
+        if (!el) return;
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        setTimeout(() => {
+            el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+        }, 800 + i * 200);
+    });
+
+    /* ── 4. HERO PHOTO POP-IN ── */
+    const photo = document.querySelector('.hero-photo');
+    if (photo) {
+        photo.style.opacity = '0';
+        photo.style.transform = 'scale(0.7) rotate(2deg)';
+        setTimeout(() => {
+            photo.style.transition = 'opacity 0.8s cubic-bezier(.34,1.56,.64,1), transform 0.8s cubic-bezier(.34,1.56,.64,1)';
+            photo.style.opacity = '1';
+            photo.style.transform = 'scale(1) rotate(2deg)';
+        }, 400);
+    }
+
+    /* ── 5. CURSOR SPARKLES ── */
+    const canvas = document.getElementById('sparkle-canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    window.addEventListener('resize', () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    });
+
+    const particles = [];
+    const colors = ['#f8cdd8', '#ffd60a', '#f72585', '#4cc9f0', '#ffffff'];
+
+    window.addEventListener('mousemove', (e) => {
+        for (let i = 0; i < 3; i++) {
+            particles.push({
+                x: e.clientX,
+                y: e.clientY,
+                r: Math.random() * 5 + 2,
+                color: colors[Math.floor(Math.random() * colors.length)],
+                vx: (Math.random() - 0.5) * 3,
+                vy: (Math.random() - 0.5) * 3 - 1,
+                life: 1
+            });
+        }
+    });
+
+    function animateSparkles() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (let i = particles.length - 1; i >= 0; i--) {
+            const p = particles[i];
+            p.x += p.vx;
+            p.y += p.vy;
+            p.vy += 0.08;
+            p.life -= 0.03;
+            if (p.life <= 0) { particles.splice(i, 1); continue; }
+            ctx.save();
+            ctx.globalAlpha = p.life;
+            ctx.fillStyle = p.color;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r * p.life, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.restore();
+        }
+        requestAnimationFrame(animateSparkles);
+    }
+    animateSparkles();
+
+    /* ── 6. NAVBAR SCROLL SHADOW ── */
+    const nav = document.querySelector('.main-nav');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 60) {
+            nav.style.boxShadow = '0 4px 20px rgba(0,0,0,0.15)';
+            nav.style.background = 'rgba(255,255,255,0.97)';
+        } else {
+            nav.style.boxShadow = 'none';
+            nav.style.background = '';
+        }
+    });
+    </script>
+
 </body>
 </html>

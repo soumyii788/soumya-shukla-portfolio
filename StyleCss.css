@@ -162,10 +162,17 @@ body {
     display: block;
     transform: rotate(2deg);
     transition: transform 0.3s ease;
+    animation: photo-float 4s ease-in-out infinite;
 }
 
 .hero-photo:hover {
     transform: rotate(-2deg) scale(1.04);
+    animation-play-state: paused;
+}
+
+@keyframes photo-float {
+    0%, 100% { transform: rotate(2deg) translateY(0); }
+    50%       { transform: rotate(2deg) translateY(-14px); }
 }
 
 
@@ -1010,4 +1017,69 @@ body {
 
     .contact-section { padding: 70px 20px; }
     .contact-item { font-size: 13px; padding: 10px 20px; }
+}
+
+/* ══ EXTRA ANIMATIONS ══ */
+
+/* Skill card pop on hover */
+.skill-card {
+    transition: transform 0.25s cubic-bezier(.34,1.56,.64,1), box-shadow 0.25s ease !important;
+}
+.skill-card:hover {
+    transform: translateY(-8px) scale(1.04) !important;
+    box-shadow: 8px 8px 0 var(--dark) !important;
+}
+
+/* Project card lift on hover */
+.project-card {
+    transition: transform 0.3s cubic-bezier(.34,1.56,.64,1), box-shadow 0.3s ease !important;
+}
+.project-card:hover {
+    transform: translateY(-10px) rotate(-1deg) !important;
+    box-shadow: 10px 10px 0 var(--dark) !important;
+}
+
+/* Yellow CTA button pulse */
+.btn-pill.yellow {
+    animation: btn-pulse 2.5s ease-in-out infinite;
+}
+@keyframes btn-pulse {
+    0%, 100% { box-shadow: 3px 3px 0 var(--dark); }
+    50%       { box-shadow: 3px 3px 0 var(--dark), 0 0 18px rgba(255,214,10,0.6); }
+}
+
+/* Nav logo wiggle on hover */
+.nav-logo {
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+.nav-logo:hover {
+    animation: wiggle 0.4s ease;
+}
+@keyframes wiggle {
+    0%,100% { transform: rotate(0deg); }
+    25%      { transform: rotate(-4deg); }
+    75%      { transform: rotate(4deg); }
+}
+
+/* Interest tags bounce in */
+.interest-tag {
+    transition: transform 0.2s cubic-bezier(.34,1.56,.64,1) !important;
+}
+.interest-tag:hover {
+    transform: scale(1.12) !important;
+}
+
+/* Cert items lift */
+.cert-item {
+    transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+}
+.cert-item:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 5px 5px 0 var(--dark) !important;
+}
+
+/* Social buttons bounce */
+.social-btn {
+    transition: transform 0.25s cubic-bezier(.34,1.56,.64,1), box-shadow 0.25s ease !important;
 }
